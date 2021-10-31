@@ -1,0 +1,10 @@
+<app-reusable-data-table
+  title="Albums"
+  [data]="albums"
+  [cols]="cols"
+  [isLoading]="isLoading"
+  (onDelete)="delete($event)"
+  [disableAdd]="true"
+  [disableEdit]="true"
+>
+</app-reusable-data-table>

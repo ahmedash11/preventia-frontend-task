@@ -1,0 +1,83 @@
+<section class="section-authentication">
+  <div class="row-main">
+    <div class="authentication">
+      <div class="authentication__form">
+        <form
+          class="form"
+          [formGroup]="loginForm"
+          (ngSubmit)="login(loginForm)"
+        >
+          <div class="u-margin-bottom-medium">
+            <h2 class="heading-secondary">Login</h2>
+          </div>
+
+          <div
+            class="form__group u-margin-bottom-medium"
+            style="position: relative"
+          >
+            <input
+              type="email"
+              class="form__input"
+              placeholder="Email address"
+              formControlName="email"
+              id="email"
+              required
+            />
+            <div
+              *ngIf="submit && !loginForm.controls['email'].valid"
+              class="error tex-danger error-msg"
+            >
+              <div [hidden]="!loginForm.controls['email'].errors?.required">
+                Email is required.
+              </div>
+              <div [hidden]="!loginForm.controls['email'].errors?.email">
+                Incorrect email format
+              </div>
+            </div>
+            <!-- <label for="email" class="form__label">Email address</label> -->
+          </div>
+          <div
+            class="form__group u-margin-bottom-medium"
+            style="position: relative"
+          >
+            <input
+              type="password"
+              class="form__input"
+              placeholder="Password"
+              formControlName="password"
+              id="password"
+              required
+            />
+            <div
+              *ngIf="submit && !loginForm.controls['password'].valid"
+              class="error tex-danger error-msg"
+            >
+              <div [hidden]="!loginForm.controls['password'].errors?.required">
+                Password is required.
+              </div>
+              <div [hidden]="!loginForm.controls['password'].errors?.minlength">
+                Minimum Length required is 8 characters
+              </div>
+            </div>
+            <!-- <label for="password" class="form__label">Password</label> -->
+          </div>
+
+          <div class="form__group">
+            <button *ngIf="loading" class="btn-main btn-main--green">
+              <div class="loader_man"></div>
+            </button>
+            <button *ngIf="!loading" class="btn-main btn-main--green">
+              Login
+            </button>
+            <div class="a_div">
+              <span> Not registered ? </span>
+              <a class="btn-main-text" [routerLink]="['/register']"
+                >Create an account</a
+              >
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

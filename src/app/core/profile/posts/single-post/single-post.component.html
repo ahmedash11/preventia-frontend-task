@@ -1,0 +1,34 @@
+<div class="col-1-of-2 u-mobile-block">
+  <div class="composition">
+    <img
+      alt="Photo 4"
+      class="composition__photo composition__photo--main"
+      [src]="post?.image"
+    />
+  </div>
+</div>
+<div class="col-1-of-2">
+  <h3 class="heading-tertiary u-margin-bottom-small">
+    {{ post.title }}
+  </h3>
+  <p class="paragraph">
+    {{ post.body }}
+  </p>
+  <a
+    (click)="viewComments(post?.id)"
+    data-toggle="modal"
+    data-target="#exampleModal"
+    href=""
+    class="btn-main-text"
+    >Read all comments &rarr;</a
+  >
+</div>
+<div class="col-1-of-2 u-mobile-hidden">
+  <div class="composition">
+    <img
+      alt="Photo 4"
+      class="composition__photo composition__photo--main"
+      [src]="post?.image"
+    />
+  </div>
+</div>

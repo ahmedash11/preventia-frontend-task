@@ -1,0 +1,18 @@
+<section class="section-tours" id="section-tours">
+  <div class="u-center-text u-margin-bottom-big">
+    <h2 class="heading-secondary">Most popular albums</h2>
+  </div>
+
+  <div class="row-main" *ngFor="let albums of activeAlbums">
+    <app-single-album [albums]="albums"></app-single-album>
+  </div>
+
+  <div
+    class="u-center-text u-margin-top-huge"
+    *ngIf="activeAlbums.length < chunkAlbums.length"
+  >
+    <a (click)="viewMoreAlbums()" class="btn-main btn-main--green"
+      >Discover more albums</a
+    >
+  </div>
+</section>

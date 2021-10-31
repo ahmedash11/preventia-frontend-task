@@ -1,0 +1,10 @@
+<app-reusable-data-table
+  title="Posts"
+  [data]="posts"
+  [cols]="cols"
+  [isLoading]="isLoading"
+  (onDelete)="delete($event)"
+  [disableAdd]="true"
+  [disableEdit]="true"
+>
+</app-reusable-data-table>

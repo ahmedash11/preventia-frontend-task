@@ -1,0 +1,37 @@
+<div
+  class="col-1-of-3 u-margin-bottom-medium"
+  *ngFor="let album of albums; let idx = index"
+>
+  <div class="card-main">
+    <div class="card-main__side card-main__side--front">
+      <div
+        [class]="'card-main__picture card-main__picture--' + ((idx % 3) + 1)"
+      >
+        &nbsp;
+      </div>
+      <h4 class="card-main__heading">
+        <span
+          [class]="
+            'card-main__heading-span card-main__heading-span--' +
+            ((idx % 3) + 1)
+          "
+          >{{ album?.title }}</span
+        >
+      </h4>
+    </div>
+    <div
+      [class]="
+        'card-main__side card-main__side--back card-main__side--back-' +
+        ((idx % 3) + 1)
+      "
+    >
+      <div class="card-main__cta">
+        <a
+          [routerLink]="['/profile/albums', album.id]"
+          class="btn-main btn-main--white"
+          >View Album Photos!</a
+        >
+      </div>
+    </div>
+  </div>
+</div>

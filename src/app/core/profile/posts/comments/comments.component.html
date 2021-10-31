@@ -1,0 +1,22 @@
+<div class="row-main" *ngFor="let comment of comments">
+  <div class="comment">
+    <figure class="comment__shape">
+      <img
+        [src]="comment?.avatar"
+        alt="Person on a tour"
+        class="comment__img"
+      />
+      <figcaption class="comment__caption">
+        {{ comment.email.split("@")[0] }}
+      </figcaption>
+    </figure>
+    <div class="comment__text">
+      <h3 class="heading-tertiary u-margin-bottom-small">
+        {{ comment.name }}
+      </h3>
+      <p>
+        {{ comment.body }}
+      </p>
+    </div>
+  </div>
+</div>

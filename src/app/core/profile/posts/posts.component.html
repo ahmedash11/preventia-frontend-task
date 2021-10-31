@@ -1,0 +1,13 @@
+<section class="section-about">
+  <div class="u-center-text u-margin-bottom-big">
+    <h2 class="heading-secondary">Posts You Created</h2>
+  </div>
+
+  <div class="row-main u-margin-top-medium" *ngFor="let post of posts">
+    <app-single-post
+      [post]="post"
+      (viewPostComments)="fetchComments(post?.id)"
+    ></app-single-post>
+  </div>
+</section>
+<app-comment-modal [comments]="comments" [postId]="postId"></app-comment-modal>

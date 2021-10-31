@@ -1,0 +1,23 @@
+.error {
+  color: red;
+  font-size: 12px;
+}
+
+.error-msg {
+  display: inline-block;
+  padding-left: 15px;
+  flex: 1;
+  position: absolute;
+  bottom: -10px;
+  font-size: 12px;
+  line-height: 0px;
+}
+
+.loader_man {
+  border: 2px solid #fff;
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 0.5s linear infinite;
+}
