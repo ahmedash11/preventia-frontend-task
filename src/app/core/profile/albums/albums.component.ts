@@ -29,7 +29,7 @@ export class AlbumsComponent implements OnInit {
       }
       this.activeAlbums = this.chunkAlbums.slice(0, this.sliceIdx);
     } catch (error) {
-      this.utilsService.forwardErrorMessage('Failed to fetch the Post');
+      this.utilsService.forwardErrorMessage('Failed to fetch Albums');
     }
   }
 
